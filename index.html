@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Red wine quality predictor</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">A project by Saket Gupta</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>saketgupta9424@gmail.com</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a>saketgupta9424@gmail.com</a></li>
+      </ul>
+      <a data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Wine Quality Predictor</h1>
+      <div class="row center">
+        <h6>This is the list of range of parameters of a good red wine :</h6>
+        <h5 class="header col s12 light">
+        <br>
+        <table class="paratable">  
+          <thead>    
+            <tr style="text-align: center;">                  
+              <th>Volatile Acidity</th>           
+              <th>Residual Sugar</th>      
+              <th>Chlorides</th>          
+              <th>Total sulphur dioxide</th>      
+              <th>Density</th>           
+              <th>Sulphates</th>      
+              <th>Alcohol</th>    
+            </tr>  
+          </thead>  
+          <tbody>    
+            <tr>                 
+              <td>0.3 - 0.5</td>           
+              <td>2.0 - 3.0</td>      
+              <td>0.06 - 0.09</td>           
+              <td>17.0 - 42.0</td>      
+              <td>0.9950 - 0.9953</td>        
+              <td>0.6 - 0.8</td>      
+              <td>10.0 - 12.0</td>    
+            </tr>  
+          </tbody>
+        </table>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="POST" class="col s12">
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+          <div class="row">
+            <div class="input-field col s4">
+    
+              <label for="last_name"><b>Volatile Acidity</b></label>
+                <br>
+              <input id="last_name" name="Volatile Acidity" placeholder="Amount of volatile acidity"  type="text" class="validate">
+    
+            </div>
+    
+            <div class="input-field col s4">
+              <label for="_name1"><b>Residual Sugar</b></label>
+              <br>
+            <input id="_name1" name="sugar" placeholder="residual sugar amount" type="text" class="validate">
+    
+          </div>
+    
+            <div class="input-field col s4">
+              <label for="_name2"><b>Chlorides</b></label>
+              <br>
+            <input id="_name2" name="clorides" placeholder="Chlorides Amount" type="text" class="validate">
+    
+          </div>
+    
+          <div class="input-field col s4">
+            <label for="_name4"><b>Total Sulfur Dioxide</b></label>
+            <br>
+          <input id="_name4" name="Total sulfur dioxide" placeholder="Amount of total sulfur dioxide" type="text" class="validate">
+    
+          </div>
+    
+          <div class="input-field col s4">
+            <label for="_name5"><b>Density</b></label>
+            <br>
+          <input id="_name5" name="Density" placeholder="density of wine" type="text" class="validate">
+    
+          </div>
+    
+          <div class="input-field col s4">
+            <label for="_name7"><b>Sulphates</b></label>
+            <br>
+          <input id="_name7" name="Sulphates" placeholder="Sulphates Measure" type="text" class="validate">
+    
+          </div>
+    
+          <div class="input-field col s4">
+            <label for="_name8"><b>Alcohol</b></label>
+            <br>
+          <input id="_name8" name="alcohol" placeholder="Alcohol Measure" type="text" class="validate">
+    
+          </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br><h4><b>{{pred}}</b></h4>
+        <br>
+
+    </div>
+  </div>
+
+  <!--  -->
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h6 class="white-text">About Me</h6>
+          <p class="grey-text text-lighten-4">I am a passionate and self motivated student of NIT Jamshedpur who aspires to become a Data scientist. This was my first end to end project. This model works on XGBoost classifier. Please visit my Github to see the whole code with jupyter notebook. </p>
+
+
+        </div>
+        
+        <div class="col l3 s12">
+          <h6 class="white-text">Connect</h6>
+          <ul>
+            <li><a class="white-text" href="https://github.com/Saket046" target="_blank">Github</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/saket-gupta-6a91651b2/" target="_blank">Linked In</a></li>
+            <li><a class="white-text" href="https://www.kaggle.com/saket046" target="_blank">Kaggle</a></li>
+            <li><a class="white-text" href="saketgupta9424@gmail.com" target="_blank">saketgupta9424@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="https://instagram.com/saket046?igshid=YmMyMTA2M2Y=" target="_blank">Saket Gupta</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
